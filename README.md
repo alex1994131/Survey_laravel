@@ -68,25 +68,16 @@ Log into your MySQL as root.
 
 Say your .env file has the following confs
 
-  DB_USERNAME=laravel_survey_user
+  DB_USERNAME=survey
   DB_HOST=127.0.0.1
-  DB_PASSWORD=laravel_survey_pass
-  DB_DATABASE=laravel_survey_database
+  DB_PASSWORD=root
+  DB_DATABASE=
 
-Create the user DB_USERNAME at DB_HOST identified by DB_PASSWORD.
-> CREATE USER laravel_survey_user@127.0.0.1 IDENTIFIED BY 'laravel_survey_pass';
-
-Create the database DB_DATABASE.
-> CREATE DATABASE laravel_survey_database;
-
-Grant DB_USERNAME all privileges to DB_DATABASE.
-> GRANT ALL ON laravel_survey_database.* TO laravel_survey_user@127.0.0.1;
-```
 
 Execute laravel's migrations.
 
 ```
-$ php artisan migrate
+$ php artisan migrate --seed
 ```
 
 Run webpack's tasks to generate JavaScript and CSS assets.
@@ -103,7 +94,9 @@ Start up the server.
 $ php artisan serve
 ```
 
-> You will have to access `http://localhost:8000/laravel/`.
+You have to remove login features in the Vendor/RegisterUser
+
+> You will have to access `http://localhost:8000/`.
 
 Optional 3rd party integrations
 ===============================
