@@ -26,7 +26,9 @@ class AppServiceProvider extends ServiceProvider
                     $owner_id = $user->parent_id;
                 }
                 $logo = CompanyInfo::where('category_id', '=', '0')->where('owner_id', '=', $owner_id)->first();
-                $logo_url = $logo->url;
+                if($logo) {
+                    $logo_url = $logo->url;
+                }
             }
             View::share( 'logo_url', $logo_url );
         });

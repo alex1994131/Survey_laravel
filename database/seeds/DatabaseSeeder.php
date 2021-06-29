@@ -13,5 +13,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(LanguageSeeder::class);
         $this->call(RatingCategorySeeder::class);
+        $this->call(UserSeeder::class);
     }
 }
